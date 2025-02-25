@@ -26,22 +26,24 @@ def main():
             orders.add_order(description, programmer_name, int(estimated_time))
             print("added!")
         elif command == "2":
-            if not orders.all_orders():
+            if not orders.all_orders(True):
                 print("no finished tasks")
-            for order in orders.all_orders():
+            for order in orders.all_orders(True):
                 print(order)
         elif command == "3":
-            pass
-            # for order in orders.all_orders():
-            #     print(order)
+            if not orders.all_orders():
+                print("no unfinished tasks")
+            for order in orders.all_orders():
+                print(order)
         elif command == "4":
-            pass
-            # order_id = int(input("order id: "))
-            # orders.mark_finished(order_id)
+            order_id = input("id: ")
+            orders.mark_finished(int(order_id))
+            print("marked as finished!")
         elif command == "5":
-            pass
-            # for programmer in orders.programmers():
-            #     print(programmer)
+            if not orders.programmers():
+                print("no programmers")
+            for programmers in orders.programmers():
+                print(programmers)
         elif command == "6":
             pass
             # programmer_name = input("programmer name: ")

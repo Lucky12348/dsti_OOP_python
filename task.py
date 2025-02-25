@@ -33,12 +33,13 @@ class OrderBook:
         task = Task(description, estimated_time, programmer_name, status)
         self.orders.append(task)
 
-    def all_orders(self):
+    def all_orders(self, finished: bool = False):
         """PART2 function return all orders"""
+        is_finished = "FINISHED" if finished else "NOT FINISHED"
         # return all false status tasks
         result_order = []
         for order in self.orders:
-            if order.status == "NOT FINISHED":
+            if order.status == is_finished:
                 result_order.append(order)
         return result_order
 
