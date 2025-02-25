@@ -45,10 +45,12 @@ def main():
             for programmers in orders.programmers():
                 print(programmers)
         elif command == "6":
-            pass
-            # programmer_name = input("programmer name: ")
-            # status = orders.status_of_programmer(programmer_name)
-            # print(status)
+            programmer_name = input("programmer: ")
+            status = orders.status_of_programmer(programmer_name)
+            print(f"task : finished {status[0]},",
+                  f"not finished {status[1]},",
+                  f"hours: done {status[2]},",
+                  f"scheduled {status[3]}")
         else:
             print(f"'{command}' command not exist")
         command = input("command: ")
