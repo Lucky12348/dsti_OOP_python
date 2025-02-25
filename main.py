@@ -30,8 +30,6 @@ def main():
                 print("no finished tasks")
             for order in orders.all_orders():
                 print(order)
-            # for order in orders.all_orders():
-            #     print(order)
         elif command == "3":
             pass
             # for order in orders.all_orders():
