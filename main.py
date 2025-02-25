@@ -25,11 +25,11 @@ def main():
             programmer_name, estimated_time = input("programmer and workload estimate: ").split()
             orders.add_order(description, programmer_name, int(estimated_time))
             print("added!")
+        elif command == "2":
+            if not orders.all_orders():
+                print("no finished tasks")
             for order in orders.all_orders():
                 print(order)
-            # orders.add_order(description, programmer_name, estimated_time)
-        elif command == "2":
-            pass
             # for order in orders.all_orders():
             #     print(order)
         elif command == "3":
