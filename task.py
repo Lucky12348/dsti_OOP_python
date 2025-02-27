@@ -1,4 +1,4 @@
-"""module to manage tasks"""
+# using Pylint for formatting
 
 
 class Task:
@@ -48,7 +48,7 @@ class OrderBook:
         return [order.programmer_name for order in self.orders]
 
     def dictionnary(self):
-        """PART3 function return all orders in a dictionnary key=programmer"""
+        """PART3 function return all orders in a dict key=programmer"""
         result_dict = {}
         # enrich dict
         for order in self.all_orders():
