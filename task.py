@@ -78,14 +78,18 @@ class OrderBook:
         finish_tasks = 0
         unfinish_tasks = 0
         result = ()
+        exist = False
         # enrich hours anf tasks
         for order in self.orders:
             if order.programmer_name == programmer_name:
+                exist = True
                 if order.status == "FINISHED":
                     finish_hours += order.estimated_time
                     finish_tasks += 1
                 else:
                     unfinish_hours += order.estimated_time
                     unfinish_tasks += 1
+        if not exist:
+            raise ValueError("Programmer not exist")
         result = (finish_tasks, unfinish_tasks, finish_hours, unfinish_hours)
         return result

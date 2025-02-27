@@ -58,6 +58,7 @@ def main():
             command = input("command: ")
         except ValueError:
             print("erroneous input")
+            command = input("command: ")
 
 
 if __name__ == "__main__":
